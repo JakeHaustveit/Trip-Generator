@@ -38,42 +38,36 @@ function randomPicker(array){
 
 }
 
-// randomPicker(restaurant)
+randomPicker(restaurant)
 // randomPicker(destination)
 // randomPicker(activities)
 // randomPicker(newWheels)
 
+console.log(randomPicker(restaurant))
 
 
-let restaurantTwo= confirm (`Your restaurant is ${randomPicker(restaurant)}\n Do you want to eat here?`)
-let restaurantAnswer= randomPicker(restaurant)
+// let restaurantTwo= confirm (`Your restaurant is ${randomPicker(restaurant)}\n Do you want to eat here?`)
+// let restaurantAnswer= randomPicker(restaurant)
 
-while(restaurantTwo!=true){
-    confirm(`Your new restaurant is ${randomPicker(restaurant)}`)
-    if(restaurantTwo != true) { confirm(`New restaurant is ${randomPicker(restaurant)}`)
+// while(restaurantTwo!=true){
+//     confirm(`Your new restaurant is ${randomPicker(restaurant)}`)
+//     if(restaurantTwo != true) { confirm(`New restaurant is ${randomPicker(restaurant)}`)
+//     }
+//     else{console.log(randomPicker(restaurant))
+//     }
+
+
+
+
+let resterauntAnswer= confirm (`Your restaurant is ${randomPicker(restaurant)}\n Do you want to eat here?`)
+   while(resterauntAnswer != true){
+    resterauntRandom= restaurant[Math.floor(Math.random() * restaurant.length)]
+    let resterauntAnswerTwo= confirm("does this work?")
+    if(resterauntAnswerTwo != true){
+        confirm("does this work?");
+        return resterauntRandom
     }
-    else{console.log(randomPicker(restaurant))
+    else{
+        return;
     }
 }
-       
-
-    
-
-
-// let destinationTwo= confirm(`Your destination is ${randomPicker(destination)}\n Do you want to go here?`)
-// while(destinationTwo !=true){
-//     randomPicker(destination)
-//     confirm(`Your new restaurant is ${randomPicker(destination)}`)
-// }
-
-// let activitiesTwo= confirm(`Your activity is ${randomPicker(destination)}\n Do you want to go here?`)
-// while(activitiesTwo !=true){
-//     randomPicker(destination)
-//     confirm(`Your new activity is ${randomPicker(activities)}`)
-// }
-
-// let newWheelsTwo= confirm(`Your vehicle is ${randomPicker(newWheels)}\n Do you want to go here?`)
-// while(activitiesTwo !=true){
-//     randomPicker(newWheels)
-//     confirm(`Your new activity is ${randomPicker(newWheels)}`)
-// }
