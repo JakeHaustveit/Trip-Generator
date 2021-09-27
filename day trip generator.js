@@ -1,27 +1,12 @@
 let restaurant= ["Chick-Fil-A", "Los Betos", "Mission BBQ", "#1 Chinese Food", "Hooter's"]
 let destination= ["Grand Canyon", "North Fork, ID", "Key West, FL", "Billings, MT"]
-let activities= ["Fly fishing", "Mountian biking", "Overnight Camping", "Bar Hoping"]
+let activities= ["Fly fishing", "Mountian biking", "Sky Diving", "Bar Hoping"]
 let newWheels= ["Ford F-150", "Jeep Grand Charokee", "Volkswagon Bus", "Mazda Miata"]
-
-
-//main function arrayPicker
-// function randomPicker(array){
-//     let arrayItemRandom= array[Math.floor(Math.random() * array.length)]
-//     return arrayItemRandom;
-// }
-
 
 function randomPicker(array){
     let arrayItemRandom= array[Math.floor(Math.random() * array.length)]
     return arrayItemRandom;
 }
-
-
-
-
-
-
-
 
 
 
@@ -33,53 +18,41 @@ let whip= randomPicker(newWheels)
 
 
 
- 
-(confirmPicker(food, randomPicker(restaurant)))
-(confirmPicker(place, randomPicker(destination)))
-(confirmPicker(fun, randomPicker(activities)))
-(confirmPicker(whip, randomPicker(newWheels)))
+alert(`Your itinerary has you eating at  ${food}\nYou will be driving a ${whip}\nto ${place}\nWhere you will be ${fun}\n`)
+let answer= prompt(` Type 1 to confirm trip\n Type 2 to change destination\n Type 3 to change desitnation and vehicle\n Type 4 to change destination, vehicle, and activity\n Type 5 to change entire trip`)
+if(answer== "1"){ 
+    console.log(`Your destination is ${place}\n Your vehicle is ${whip}\n Your activity is ${fun}\n Your restaurant is ${food}\n Have a safe trip!`)}
 
 
-function confirmPicker(random, array){
-    let randomItem= confirm(`Your option is ${random}\n Are you happy with this?`)
-    if(randomItem == true){
-        return(random);
-    }
-    else{
-        let randomItemTwo= randomPicker(array)
-        randomItemTwo= confirm(`Your new option is ${array}`)           
+if(answer == "2") {let activityTwo= randomPicker(destination)
+    let answerOne= confirm(`Your new destination is ${activityTwo}`)
+    if(answerOne== true){ console.log(`Your new destination is ${activityTwo}\n Your vehicle is ${whip}\n Your activity is ${fun}\n Your restaurant is ${food}`)}
+}
+if(answer == "3"){ let activityThree=randomPicker(destination)
+    let newWheelsTwo=randomPicker(newWheels)
+    alert(`Your new destination is ${activityThree}\n Your new vehicle is ${newWheelsTwo}`) 
+    let answerTwo= confirm(`Hit ok to confirm trip`)
+    if(answerTwo == true) {console.log(`Your new destination is ${randomPicker(destination)}\n Your new vehicle is ${randomPicker(newWheels)}\n Your activity is ${fun}\n Your restaurant is ${food}`)}
+}
+if(answer == "4"){ 
+    let activityFour= randomPicker(activities) 
+    let newWheelsThree= randomPicker(newWheels)
+    let destinationTwo= randomPicker(destination)
+    alert(`Your new destination is ${destinationTwo}\n Your new vehicle is ${newWheelsThree}\n Your New activity is${activityFour}`)
+    let answerThree= confirm(`Hit ok to confirm trip`)
+    if(answerThree== true){console.log(`Your new destination is ${destinationTwo}\n Your new vehicle is ${newWheelsThree}\n Your new activity is ${activityFour}\n Your restaurant is ${food}`)}
+}
+if(answer == "5"){ let activityFive= randomPicker(activities) 
+    let newWheelsFour= randomPicker(newWheels)
+    let destinationThree= randomPicker(destination)
+    let foodTwo= randomPicker(restaurant)
+    alert(`Your new destination is ${destinationThree}\n Your new vehicle is ${newWheelsFour}\n Your new activity is ${activityFive}\n Your new restaurant is ${foodTwo}`)
+    let answerFour= confirm(`Hit ok to confirm trip`)
     
-    return(array)}
-
+    if(answerFour== true){console.log(`Your new destination is ${destinationThree}\n Your new vehicle is ${newWheelsFour}\n Your new activity is ${activityFive}\n Your new restaurant is ${foodTwo}`)
 }
 
 
-
-
-// function confirmPicker(random, array){
-//     let randomItem= confirm(`Your option is ${random}\n Are you happy with this?`)
-//     if(randomItem == true){
-//         return(random);
-//     }
-//     else{
-//         let randomItemTwo= randomPicker(array)
-//         randomItemTwo= confirm(`Your new option is ${array}\n Do you want this?`)
-//     while(randomItemTwo == true){
-//        let randomItemTWo= randomPicker(array)
-             
-//     }
-//     return(array)}
-
-// }
-
-
-
-
-
-
-//Trip Prompt
-function tripPlanner(){
-     alert(`Your itinerary has you eating at  ${randomPicker(restaurant)}\n You will be driving a ${randomPicker(newWheels)}\n to ${randomPicker(destination)}\n where you will be doing ${randomPicker(activities)}\n Have a wonderful trip!`)
 }
 
 
@@ -98,64 +71,3 @@ function tripPlanner(){
 
 
 
-
-
-
-// let resterauntAnswer= confirm (`Your restaurant is ${randomPicker(restaurant)}\n Do you want to eat here?`) 
-
-// let restaurantAnswerTwo
-
-// {
-//     while( resterauntAnswer != true){
-//         let restaurantAnswerTwo= confirm(`Your new restaurant is ${randomPicker(restaurant)}\n Does this work?`)
-//         if(restaurantAnswerTwo == true){
-//             let resterauntAnswer=== true
-//         }
-//         else{
-//             restaurantAnswerTwo= confirm(`Your new restaurant is ${randomPicker(restaurant)}\n Does this work?`);
-//     }
-//  }
-//  return(food)
-
-// }
-
-
-
-// randomPicker(destination)
-// randomPicker(activities)
-// randomPicker(newWheels)
-
-
-
-// let restaurantTwo= confirm (`Your restaurant is ${randomPicker(restaurant)}\n Do you want to eat here?`)
-// let restaurantAnswer= randomPicker(restaurant)
-
-// while(restaurantTwo!=true){
-//     confirm(`Your new restaurant is ${randomPicker(restaurant)}`)
-//     if(restaurantTwo != true) { confirm(`New restaurant is ${randomPicker(restaurant)}`)
-//     }
-//     else{console.log(randomPicker(restaurant))
-//     }
-// }
-       
-
-    
-
-
-// let destinationTwo= confirm(`Your destination is ${randomPicker(destination)}\n Do you want to go here?`)
-// while(destinationTwo !=true){
-//     randomPicker(destination)
-//     confirm(`Your new restaurant is ${randomPicker(destination)}`)
-// }
-
-// let activitiesTwo= confirm(`Your activity is ${randomPicker(destination)}\n Do you want to go here?`)
-// while(activitiesTwo !=true){
-//     randomPicker(destination)
-//     confirm(`Your new activity is ${randomPicker(activities)}`)
-// }
-
-// let newWheelsTwo= confirm(`Your vehicle is ${randomPicker(newWheels)}\n Do you want to go here?`)
-// while(activitiesTwo !=true){
-//     randomPicker(newWheels)
-//     confirm(`Your new activity is ${randomPicker(newWheels)}`)
-// }
